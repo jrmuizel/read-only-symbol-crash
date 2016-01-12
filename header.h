@@ -10,7 +10,7 @@ template <class EntryType> struct nsTHashtable {
 	   nsTHashtable()       : mTable(Ops()) {
 		  }
 	  PLDHashTable mTable;
-	  static void s_CopyEntry();
+	  static void s_CopyEntry() {}
 	  static const PLDHashTableOps *Ops();
 };
 template <class EntryType> const PLDHashTableOps *nsTHashtable<EntryType>::Ops() {
