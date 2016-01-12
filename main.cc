@@ -1,6 +1,6 @@
 #include "header.h"
 
-nsTHashtable<int> k;
+nsTHashtable k;
 
 int main()
 {

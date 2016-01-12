@@ -6,7 +6,7 @@ class PLDHashTable {
 	public:   PLDHashTable(const PLDHashTableOps *aOps);
 };
 
-template <class EntryType> struct nsTHashtable {
+struct nsTHashtable {
 	   nsTHashtable()       : mTable(Ops()) {
 		  }
 	  PLDHashTable mTable;
@@ -15,7 +15,7 @@ template <class EntryType> struct nsTHashtable {
 
 inline void dancing() {}
 
-template <class EntryType> const PLDHashTableOps *nsTHashtable<EntryType>::Ops() {
+inline const PLDHashTableOps *nsTHashtable::Ops() {
 	static const PLDHashTableOps sOps = {
 		true ? 0 : dancing};
 	return &sOps;
@@ -23,7 +23,7 @@ template <class EntryType> const PLDHashTableOps *nsTHashtable<EntryType>::Ops()
 
 struct gfxPlatformFontList  {
 	gfxPlatformFontList();
-	nsTHashtable<int> mFontFamilies;
+	nsTHashtable mFontFamilies;
 };
 
 
