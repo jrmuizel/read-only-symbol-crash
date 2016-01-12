@@ -1,5 +1,5 @@
 struct PLDHashTableOps {
-	void *moveEntry;
+	void (*moveEntry)();
 };
 
 class PLDHashTable {
