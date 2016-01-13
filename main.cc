@@ -1,8 +1,8 @@
 #include "header.h"
 
-nsTHashtable k;
-
+PLDHashTableOps a;
 int main()
 {
-	gfxPlatformFontList p;
+	a = *f(Ops());
+	r();
 }
