@@ -2,10 +2,6 @@ struct PLDHashTableOps {
 	void (*moveEntry)();
 };
 
-class PLDHashTable {
-	public:   PLDHashTable(const PLDHashTableOps *aOps);
-};
-
 inline void dancing() {}
 void r();
 
