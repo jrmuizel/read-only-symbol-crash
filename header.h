@@ -1,11 +1,10 @@
-typedef void (*fn)();
+typedef int *T;
 
-inline void dancing() {}
-
-const fn *f(const fn *);
+const T *f(const T *);
 
 inline const fn *Ops() {
-	static const fn sOps = true ? 0 : dancing;
+	static int k;
+	static const T sOps = true ? 0 : &k;
 	return &sOps;
 }
 
