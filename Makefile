@@ -1,12 +1,12 @@
 CLANG=~/src/llvm/build/bin/clang-cl
 CL=cl-2013-64
 CFLAGS=-c -O1
-CFLAGS=-c -FS #FS helps debugging
-main.exe: gfxplatform.obj main.obj
-	$(CL)  main.obj gfxplatform.obj
+CFLAGS=-c -FS #FS helps make it clear what's going in what section
+main.exe: b.obj main.obj
+	$(CL)  main.obj b.obj
 main.obj: main.cc
 	$(CLANG) -O1  $(CFLAGS)  main.cc
-gfxplatform.obj: gfxplatform.cc
-	$(CL) $(CFLAGS) gfxplatform.cc
+b.obj: b.cc
+	$(CL) $(CFLAGS) b.cc
 clean:
-	rm gfxplatform.obj main.obj main.exe
+	rm b.obj main.obj main.exe
