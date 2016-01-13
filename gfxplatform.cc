@@ -1,9 +1,4 @@
 #include "header.h"
 
-const PLDHashTableOps *f(const PLDHashTableOps *p) { return p; }
+const fn *f(const fn *p) { return Ops(); }
 
-PLDHashTableOps mo;
-void r()
-{
-	mo = *Ops();
-}

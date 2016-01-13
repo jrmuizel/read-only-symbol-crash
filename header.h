@@ -1,15 +1,11 @@
-struct PLDHashTableOps {
-	void (*moveEntry)();
-};
+typedef void (*fn)();
 
 inline void dancing() {}
-void r();
 
-const PLDHashTableOps *f(const PLDHashTableOps *);
+const fn *f(const fn *);
 
-inline const PLDHashTableOps *Ops() {
-	static const PLDHashTableOps sOps = {
-		true ? 0 : dancing};
+inline const fn *Ops() {
+	static const fn sOps = true ? 0 : dancing;
 	return &sOps;
 }
 
